@@ -1,0 +1,903 @@
+<section>
+    <div
+      class="
+        hidden
+        fixed
+        z-50
+        bg-gray-800 bg-opacity-40
+        w-full
+        h-screen
+        flex
+        items-center
+        justify-center
+      "
+    >
+      <div class=" bg-white shadow-2xl p-6 rounded-2xl">
+        <h1 class="text-center text-black text-xl tracking-wider py-4">Ajouter Nouvelle formation</h1>
+        <form (submit)="registerTraining()" role="form">
+        <div class="grid-cols-2 grid gap-4">
+          <div class="mb-4 w-64">
+            <label for="firstName" class="block mb-1">
+              Titre
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+            [(ngModel)]="titre"
+            name="titre"
+            placeholder="titre"
+              required
+              type="text"
+              class="
+                bg-gray-100
+                border border-blue-300
+                py-2 px-2 
+                focus:outline-none
+                rounded
+                w-full
+                block
+              "
+              id="title"
+              autoComplete="off"
+              value=""
+            />
+          </div>
+  
+          <div class="mb-4 w-64">
+            <label for="lastName" class="block mb-1">
+              Type
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+            [(ngModel)]="type"
+            name="type"
+            placeholder="type"
+              required
+              type="text"
+              class="
+                bg-gray-100
+                border border-blue-300
+                py-2 px-2
+                focus:outline-none
+                rounded
+                w-full
+                block
+              "
+              id="lastName"
+              autoComplete="off"
+              value=""
+            />
+          </div>
+  
+          <div class="mb-4 w-64">
+            <label htmlFor="sexe" class="block mb-1">
+              Date
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+            [(ngModel)]="date"
+            name="date"
+              required
+              type="text"
+              class="
+                bg-gray-100
+                border border-blue-300
+                py-2 px-2
+                focus:outline-none
+                rounded
+                w-full
+                block
+              "
+              id="lastName"
+              autoComplete="off"
+              value=""
+              placeholder="date"
+            />
+          </div>
+  
+          <div class="mb-4 w-64">
+            <label htmlFor="sexe" class="block mb-1">Frais d'inscription
+              <span class="text-red-500">*</span>
+            </label>
+            <input
+              required
+              type="number"
+              class="
+                bg-gray-100
+                border border-blue-300
+                py-2 px-2
+                focus:outline-none
+                rounded
+                w-full
+                block
+              "
+              id="frais"
+              autoComplete="off"
+              value=""
+              placeholder="frais d'inscription"
+            />
+          </div>
+  
+          <div class="mb-4 w-64">
+            <label htmlFor="sexe" class="block mb-1">Description
+              <span class="text-red-500">*</span>
+            </label>
+            <textarea
+            [(ngModel)]="description"
+            name="description"
+              required
+              type="number"
+              class="
+                bg-gray-100
+                border border-blue-300
+                py-2 px-2
+                focus:outline-none
+                rounded
+                w-full
+                block
+              "
+              id="phone"
+              autoComplete="off"
+              value=""
+              placeholder="Description"
+            ></textarea>
+
+          </div>
+  
+          
+  
+        </div>
+  
+          <div class="flex justify-between items-center">
+            <button class="w-64 py-3 bg-red-400 rounded text-white">Annuler</button>
+            <button class="w-64 py-3 bg-purple-500 rounded text-white">Ajouter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="flex relative z-40">
+      <div
+      class="p-4 w-64 text-sm bg-indigo-500 rounded flex justify-center mr-4"
+      >
+      <div>
+        <div routerLink="/dashboard"
+          class="
+            flex
+            items-center
+            justify-center
+            w-40
+            h-40
+            text-center
+            bg-white
+            rounded
+            mb-4
+            shadow
+          "
+        >
+          <div>
+            <div class="flex items-center justify-center mb-4">
+              <mat-icon class="text-purple-600">home</mat-icon>
+            </div>
+            <span class="capitalize">Dashboard</span>
+          </div>
+        </div>
+
+        <div>
+          <div routerLink="/dashboard/formateur"
+            class="
+              flex
+              items-center
+              justify-center
+              w-40
+              h-40
+              text-center
+              bg-white
+              rounded
+              mb-4
+              shadow
+            "
+          >
+            <div>
+              <div class="flex items-center justify-center mb-4">
+                <mat-icon class="text-purple-600">group</mat-icon>
+              </div>
+              <span class="block capitalize">Gestion des Formateurs</span>
+            </div>
+          </div>
+
+          <div routerLink="/dashboard/member"
+            class="
+              flex
+              items-center
+              justify-center
+              w-40
+              h-40
+              text-center
+              bg-white
+              rounded
+              mb-4
+              shadow
+            "
+          >
+            <div>
+              <div class="flex items-center justify-center mb-4">
+                <mat-icon class="text-purple-600"
+                  >supervised_user_circle</mat-icon
+                >
+              </div>
+              <span class="capitalize">Gestion des Membres</span>
+            </div>
+          </div>
+        </div>
+
+        <div routerLink="/dashboard/formation"
+          class="
+            flex
+            items-center
+            justify-center
+            w-40
+            h-40
+            text-center
+            bg-white
+            rounded
+            mb-4
+            shadow
+          "
+        >
+          <div>
+            <div class="flex items-center justify-center mb-4">
+              <mat-icon class="text-purple-600">description</mat-icon>
+            </div>
+            <span class="capitalize">Gestion des Formations</span>
+          </div>
+        </div>
+
+        <div routerLink="/dashboard/start-up"
+          class="
+            flex
+            items-center
+            justify-center
+            w-40
+            h-40
+            text-center
+            bg-white
+            rounded
+            mb-4
+            shadow
+          "
+        >
+          <div>
+            <div class="flex items-center justify-center mb-4">
+              <mat-icon class="text-purple-600">description</mat-icon>
+            </div>
+            <span class="capitalize">Gestion des start up</span>
+          </div>
+        </div>
+
+
+        <div routerLink="/dashboard/structure-appui"
+          class="
+            flex
+            items-center
+            justify-center
+            w-40
+            h-40
+            text-center
+            bg-white
+            rounded
+            mb-4
+            shadow
+          "
+        >
+          <div>
+            <div class="flex items-center justify-center mb-4">
+              <mat-icon class="text-purple-600">description</mat-icon>
+            </div>
+            <span class="capitalize">Gestion des structures d'appui</span>
+          </div>
+        </div>
+
+        <div
+          class="
+            flex
+            items-center
+            justify-center
+            w-40
+            h-40
+            text-center
+            bg-white
+            rounded
+            mb-4
+            shadow
+          "
+        >
+          <div routerLink="/dashboard/profile">
+            <div class="flex items-center justify-center mb-4">
+              <mat-icon class="text-purple-600">person</mat-icon>
+            </div>
+            <span class="capitalize text-center">Profile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="flex-1">
+        <header
+          class="
+            px-4
+            py-4
+            bg-white
+            border-b border-b-gray-200
+            flex
+            justify-between
+            rounded
+            mb-12
+          "
+        >
+          <div class="text-gray-500 font-bold">
+            <h1 class="fon-bold text-2xl">Pfe Angham</h1>
+            <!-- <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">D</div> -->
+            <span class="block"></span>
+          </div>
+          <div class="relative">
+            <div
+              class="
+                w-16
+                h-16
+                rounded-full
+                bg-indigo-400
+                text-white
+                flex
+                items-center
+                justify-center
+              "
+            >
+              <div
+                class="
+                  w-16
+                  h-16
+                  rounded-full
+                  bg-indigo-200
+                  flex
+                  items-center
+                  justify-center
+                "
+              >
+                <span class="text-xl text-indigo-700">D</span>
+              </div>
+            </div>
+            <ul class="bg-white shadow absolute w-64 py-1 right-0 rounded">
+              <li>
+                <div class="w-full p-2 hover:bg-gray-100">Foulen ben foulen</div>
+              </li>
+              <li>
+                <div class="w-full p-2 hover:bg-gray-100">Déconnexion</div>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <div class="mt-12 px-6">
+          <h1 class="text-3xl text-black font-bold">Gestion des Formations</h1>
+          <div class="flex items-center justify-end">
+            <button
+              type="button"
+              class="
+                inline-flex
+                items-center
+                px-4
+                py-2
+                border border-transparent
+                text-base
+                leading-6
+                font-medium
+                rounded-md
+                text-white
+                bg-indigo-600
+                hover:bg-rose-500
+                focus:border-rose-700
+                active:bg-rose-700
+                transition
+                ease-in-out
+                duration-150
+              "
+            >
+              Ajouter Nouveau Formation
+            </button>
+          </div>
+          <table
+            class="
+              w-full
+              sm:bg-white
+              rounded-lg
+              overflow-hidden
+              sm:shadow-lg
+              my-5
+              text-sm
+            "
+          >
+            <thead class="text-white">
+              <tr
+                class="
+                  bg-green-300
+                  flex flex-col flex-no-wrap
+                  sm:table-row
+                  rounded-l-lg
+                  sm:rounded-none
+                  mb-2
+                  sm:mb-0
+                "
+              >
+                <th class="p-3 text-left capitalize">ID</th>
+                <th class="p-3 text-left capitalize">Titre</th>
+                <th class="p-3 text-left capitalize">Type</th>
+                <th class="p-3 text-left capitalize">Date</th>
+                <th class="p-3 text-left capitalize">Frais</th>
+                <th class="p-3 text-left capitalize">Description</th>
+                <th class="p-3 text-left capitalize w-64">Action</th>
+              </tr>
+            </thead>
+            <tbody class="flex-1 sm:flex-none">
+              <tr
+                key="{index}"
+                class="flex flex-col flex-no-wrap sm:table-row mb-2 sm:mb-0"
+              >
+                <td
+                  class="border-grey-light border hover:bg-gray-100 p-3 truncate"
+                >
+                  <strong>#12</strong>
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Formation Angular
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Dev web
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  21 juillet 2021
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  400 TND
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Description
+                </td>
+  
+                <td class="border-grey-light border">
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <button
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        éditer
+                      </button>
+                      <span>|</span>
+  
+                      <button
+                        type="button"
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        Supprimer
+                      </button>
+                      <span>|</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="
+                        hover:bg-gray-100
+                        p-3
+                        text-red-400
+                        hover:text-red-600
+                        hover:font-medium
+                        cursor-pointer
+                        focus:outline-none
+                        capitalize
+                      "
+                    >
+                      Voir
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                key="{index}"
+                class="flex flex-col flex-no-wrap sm:table-row mb-2 sm:mb-0"
+              >
+                <td
+                  class="border-grey-light border hover:bg-gray-100 p-3 truncate"
+                >
+                  <strong>#12</strong>
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Formation Angular
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Dev web
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  21 juillet 2021
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  400 TND
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Description
+                </td>
+  
+                <td class="border-grey-light border">
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <button
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        éditer
+                      </button>
+                      <span>|</span>
+  
+                      <button
+                        type="button"
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        Supprimer
+                      </button>
+                      <span>|</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="
+                        hover:bg-gray-100
+                        p-3
+                        text-red-400
+                        hover:text-red-600
+                        hover:font-medium
+                        cursor-pointer
+                        focus:outline-none
+                        capitalize
+                      "
+                    >
+                      Voir
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                key="{index}"
+                class="flex flex-col flex-no-wrap sm:table-row mb-2 sm:mb-0"
+              >
+                <td
+                  class="border-grey-light border hover:bg-gray-100 p-3 truncate"
+                >
+                  <strong>#12</strong>
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Formation Angular
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Dev web
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  21 juillet 2021
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  400 TND
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Description
+                </td>
+  
+                <td class="border-grey-light border">
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <button
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        éditer
+                      </button>
+                      <span>|</span>
+  
+                      <button
+                        type="button"
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        Supprimer
+                      </button>
+                      <span>|</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="
+                        hover:bg-gray-100
+                        p-3
+                        text-red-400
+                        hover:text-red-600
+                        hover:font-medium
+                        cursor-pointer
+                        focus:outline-none
+                        capitalize
+                      "
+                    >
+                      Voir
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                key="{index}"
+                class="flex flex-col flex-no-wrap sm:table-row mb-2 sm:mb-0"
+              >
+                <td
+                  class="border-grey-light border hover:bg-gray-100 p-3 truncate"
+                >
+                  <strong>#12</strong>
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Formation Angular
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Dev web
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  21 juillet 2021
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  400 TND
+                </td>
+                <td
+                  class="
+                    border-grey-light border
+                    hover:bg-gray-100
+                    p-3
+                    overflow-hidden
+                  "
+                >
+                  Description
+                </td>
+  
+                <td class="border-grey-light border">
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <button
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        éditer
+                      </button>
+                      <span>|</span>
+  
+                      <button
+                        type="button"
+                        class="
+                          hover:bg-gray-100
+                          p-3
+                          text-red-400
+                          hover:text-red-600
+                          hover:font-medium
+                          cursor-pointer
+                          focus:outline-none
+                          capitalize
+                        "
+                      >
+                        Supprimer
+                      </button>
+                      <span>|</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="
+                        hover:bg-gray-100
+                        p-3
+                        text-red-400
+                        hover:text-red-600
+                        hover:font-medium
+                        cursor-pointer
+                        focus:outline-none
+                        capitalize
+                      "
+                    >
+                      Voir
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  
